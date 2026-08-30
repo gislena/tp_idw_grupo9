@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veterinaria Patas Arriba - Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+    <style>
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 50%;
+            width: 70px;      /* antes 60px */
+            height: 70px;     /* antes 60px */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .whatsapp-float img {
+            width: 70px;      /* antes 35px */
+        }
+</style>
+</head>
+
+<body>
+
+    <header>
+        <img src="/assets/images/Logo.png" alt="Logo" width="200px">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="informacionInstitucional.html">Informacion Institucional</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="contact-cards">
+
+            <div class="card card-map">
+                <h3>Dónde estamos</h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.4370!3d-34.5895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzIyLjIiUyA1OMKwMjYnMTMuMiJX!5e0!3m2!1ses!2sar!4v1690000000000"
+                    width="100%"
+                    height="250"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+                <p>Av. Santa Fe 2000, CABA</p>
+            </div>
+
+            <div class="card card-phone">
+                <h3>Llamanos</h3>
+                <p> (011) 4555-5555</p>
+                <p>Lunes a Viernes de 9 a 18hs</p>
+            </div>
+
+            <div class="card card-social">
+                <h3>Seguinos</h3>
+                <p>Mirá fotos de nuestros pacientes y novedades en Instagram</p>
+                <a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer">
+                    @patasarriba.vet
+                </a>
+            </div>
+
+        </section>
+
+        <section class="contact-form">
+            <h2>Dejanos tu consulta</h2>
+            <form
+                action="https://formspree.io/f/xrpgebyz"
+                method="POST"
+            >
+                <label>
+                    Nombre:
+                    <input type="text" name="nombre" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
+                </label>
+                <label>
+                    Apellido:
+                    <input type="text" name="apellido" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
+                </label>
+                <label>
+                    Tu email:
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    Tu mensaje:
+                    <textarea name="message" required></textarea>
+                </label>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <a href="https://wa.me/5491100000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="assets/images/logowhatsapp.png" alt="WhatsApp" width="40">
+    </a>
+
+    <footer>
+        <p>
+            Veterinaria Patas Arriba - IDW - FCAD UNER 2026
+        </p>
+    </footer>
+
+</body>
+</html>
