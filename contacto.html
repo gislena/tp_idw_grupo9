@@ -62,16 +62,16 @@
 
             <div class="card card-phone">
                 <h3>Llamanos</h3>
-                <p class="texto-descripcion"> (011) 4555-5555</p>
+                <p class="texto-descripcion">
+                    <a href="tel:+541145555555">(011) 4555-5555</a>
+                </p>
                 <p class="texto-descripcion">Lunes a Viernes de 9 a 18hs</p>
             </div>
 
             <div class="card card-social">
                 <h3>Seguinos</h3>
                 <p class="texto-descripcion">Mirá fotos de nuestros pacientes y novedades en Instagram</p>
-                <a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer">
-                    @patasarriba.vet
-                </a>
+                <a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer"> @patas.arriba.vete </a>
             </div>
 
         </section>
@@ -79,22 +79,10 @@
         <section class="contact-form">
             <h2>Dejanos tu consulta</h2>
             <form action="https://formspree.io/f/xrpgebyz" method="POST">
-                <label>
-                    Nombre:
-                    <input type="text" name="nombre" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
-                </label>
-                <label>
-                    Apellido:
-                    <input type="text" name="apellido" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
-                </label>
-                <label>
-                    Tu email:
-                    <input type="email" name="email" required>
-                </label>
-                <label>
-                    Tu mensaje:
-                    <textarea name="message" required></textarea>
-                </label>
+                <label> Nombre: <input type="text" name="nombre" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"></label>
+                <label> Apellido: <input type="text" name="apellido" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"> </label>
+                <label> Tu email: <input type="email" name="email" required> </label>
+                <label> Tu mensaje: <textarea name="message" required></textarea> </label>
                 <button type="submit" class="boton-principal">Enviar</button>
             </form>
         </section>
