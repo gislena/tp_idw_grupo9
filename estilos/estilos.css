@@ -110,13 +110,15 @@ body {
     position: relative;
     width: 100%;
     min-height: 85vh;
-    /* La foto cubre todo el fondo */
-    background: url('./assets/images/VeterinariaPastorAleman.png') center/cover no-repeat;
+    /* Sale de la carpeta estilos (../) y entra a assets/images */
+    background-image: url('../assets/images/VeterinariaPastorAleman.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     padding: 60px 8%;
 }
-
 /* RECUADRO AZUL: TARJETA CREMITA SEMI-TRANSPARENTE PARA EL TEXTO */
 .texto-bienvenida {
     background-color: rgba(234, 231, 224, 0.90); 
