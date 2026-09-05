@@ -6,7 +6,6 @@ Trabajo Final Integrador - Introducción al Desarrollo Web
 
 - Maria Agustina Belsun
 - Belen Fehr
-- Federico Garcia
 - Gislena Gil Lopez
 - Sabrina Meritano
 
