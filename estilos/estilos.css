@@ -1,0 +1,553 @@
+/* ==========================================
+    1. FUENTES DE GOOGLE FONTS & VARIABLES
+    ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --azul-crepusculo: #3A587E;
+    --gris-ceniza:     #A9C3C4;
+    --petalo-polvo:    #EEDFD8;
+    --lino-suave:      #EAE7E0;
+    --broncearse:      #D5AD89;
+    --blanco:          #FFFFFF;
+    --texto-oscuro:    #2B2B2B;
+
+    --fuente-principal: 'Montserrat', sans-serif;
+    --fuente-titulos:   'Dancing Script', cursive;
+}
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--lino-suave);
+    color: var(--texto-oscuro);
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+    2. ENCABEZADO Y NAVEGACIÓN (BARRA AZUL)
+   ========================================== */
+.encabezado {
+    width: 100%;
+    background-color: var(--lino-suave);
+}
+
+.navegacion {
+    width: 100%;
+    height: 75px;
+    background-color: var(--azul-crepusculo);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-right: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* LOGO SOBREPUESTO EN UN CUADRO A LA IZQUIERDA */
+.logo-contenedor {
+    background-color: var(--lino-suave);
+    padding: 8px 18px;
+    margin-left: 5%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 6px 6px;
+    transition: transform 0.3s ease;
+}
+
+.logo-contenedor:hover {
+    transform: translateY(2px);
+}
+
+.logo-contenedor .logo {
+    height: 85px;
+    width: auto;
+    display: block;
+}
+
+/* MENÚ A LA DERECHA */
+.navegacion ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+}
+
+.navegacion ul li a {
+    display: flex;
+    align-items: center;
+    height: 75px;
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    padding: 0 22px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navegacion ul li a:hover,
+.navegacion ul li a.activo {
+    background-color: #1a2e47;
+}
+
+/* ==========================================
+    3. SECCIÓN HERO (PORTADA PRINCIPAL)
+   ========================================== */
+.seccion-inicio {
+    position: relative;
+    width: 100%;
+    min-height: 85vh;
+    /* La foto cubre todo el fondo */
+    background: url('./assets/images/VeterinariaPastorAleman.png') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 60px 8%;
+}
+
+/* RECUADRO AZUL: TARJETA CREMITA SEMI-TRANSPARENTE PARA EL TEXTO */
+.texto-bienvenida {
+    background-color: rgba(234, 231, 224, 0.90); 
+    padding: 3.5rem 3rem;
+    border-radius: 16px;
+    max-width: 580px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    animation: fadeInUp 1s ease-out;
+}
+
+.titulo-principal {
+    font-family: var(--fuente-titulos) !important;
+    font-size: 3.5rem;
+    color: var(--azul-crepusculo);
+    margin-bottom: 1.2rem;
+    line-height: 1.2;
+}
+
+.texto-bienvenida p {
+    font-size: 1.1rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 2.2rem;
+    line-height: 1.6;
+}
+
+.boton-principal {
+    display: inline-block;
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
+    padding: 12px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.boton-principal:hover {
+    background-color: var(--broncearse);
+    color: var(--blanco);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ANIMACIÓN */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+    /* ==========================================
+    4. SECCIÓN SERVICIOS (TARJETAS Y DISEÑO)
+   ========================================== */
+.servicios {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--lino-suave);
+}
+
+.titulo-seccion {
+    font-family: var(--fuente-titulos) !important;
+    font-size: 3.2rem;
+    color: var(--azul-crepusculo);
+    margin-bottom: 3rem;
+}
+
+.servicios-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-servicio {
+    background-color: var(--blanco);
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 2.5rem 1.8rem;
+    text-decoration: none; /* Le quita el azul y el subrayado feo */
+    color: var(--texto-oscuro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+}
+
+.icono-servicio {
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    transition: transform 0.35s ease;
+}
+
+.tarjeta-servicio h3 {
+    color: var(--azul-crepusculo);
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.tarjeta-servicio p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.enlace-texto {
+    font-weight: bold;
+    color: var(--broncearse);
+    margin-top: auto;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* EFECTOS HOVER (ANIMACIÓN DE TARJETAS) */
+.tarjeta-servicio:hover {
+    transform: translateY(-10px);
+    border-color: var(--gris-ceniza);
+    box-shadow: 0 14px 28px rgba(58, 88, 126, 0.18);
+}
+
+.tarjeta-servicio:hover .icono-servicio {
+    transform: scale(1.2) rotate(-6deg);
+}
+
+.tarjeta-servicio:hover .enlace-texto {
+    transform: translateX(6px);
+    color: var(--azul-crepusculo);
+}
+/* ==========================================
+    5. PIE DE PÁGINA (FOOTER)
+   ========================================== */
+footer#contacto,
+.pie-pagina {
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+footer#contacto p {
+    margin: 0;
+    color: var(--blanco);
+    font-family: var(--fuente-principal);
+    letter-spacing: 0.5px;
+} 
+    /* ==========================================
+    6. PÁGINA INSTITUCIONAL
+    ========================================== */
+.contenedor-institucional {
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.tarjeta-institucional {
+    background-color: var(--blanco);
+    border-radius: 14px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    /* Transición para la animación hover */
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                box-shadow 0.35s ease, 
+                border-color 0.35s ease;
+    border: 2px solid transparent;
+}
+
+/* EFECTO HOVER PARA TODAS LAS TARJETAS */
+.tarjeta-institucional:hover {
+    transform: translateY(-8px);
+    border-color: var(--gris-ceniza);
+    box-shadow: 0 14px 28px rgba(58, 88, 126, 0.18);
+}
+
+.tarjeta-institucional h2 {
+    color: var(--azul-crepusculo);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.tarjeta-institucional p {
+    color: var(--texto-oscuro);
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.lista-valores {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    text-align: left;
+}
+
+.lista-valores li {
+    font-size: 1.05rem;
+    color: var(--texto-oscuro);
+    margin-bottom: 0.8rem;
+    line-height: 1.5;
+} 
+    /* ==========================================
+   ESTILOS PÁGINA DE CONTACTO
+   ========================================== */
+
+/* Contenedor general */
+.contenido-principal {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+/* Títulos con la misma tipografía e identidad del sitio */
+.titulo-contacto {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--color-primario, #2a5298);
+    margin-bottom: 25px;
+}
+
+/* Estructura en 2 Columnas (Info Izquierda - Mapa Derecha) */
+.seccion-ubicacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+}
+
+/* Columna Izquierda: Tarjeta blanca con bordes redondeados */
+.info-contacto-box {
+    flex: 1;
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 22px;
+}
+
+.info-item h4 {
+    color: var(--color-primario, #2a5298);
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.info-item p, 
+.info-item a {
+    font-size: 1rem;
+    color: #444444;
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+.info-item a {
+    color: var(--color-primario, #2a5298);
+    font-weight: bold;
+}
+
+.info-item a:hover {
+    text-decoration: underline;
+}
+
+.info-item .horario {
+    color: #666666;
+    font-size: 0.95rem;
+}
+
+/* Columna Derecha: Mapa Cuadrado */
+.mapa-box {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 12px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    display: flex;
+}
+
+.mapa-box iframe {
+    width: 100%;
+    height: 320px;
+    border: none;
+    border-radius: 12px;
+}
+
+/* Formulario Rectangular Inferior */
+.contact-form {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    width: 100%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: 600;
+    color: #333333;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primario, #2a5298);
+    box-shadow: 0 0 0 3px rgba(42, 82, 152, 0.15);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer Azul con WhatsApp Integrado a la Derecha */
+.pie-pagina {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: var(--color-primario, #2a5298);
+    color: #ffffff;
+    margin-top: 50px;
+}
+
+.pie-pagina .texto-descripcion {
+    color: #ffffff;
+    margin: 0;
+}
+
+.whatsapp-footer-link img {
+    width: 90px;
+    height: 90px;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-footer-link img:hover {
+    transform: scale(1.15);
+}
+
+/* Adaptación para pantallas pequeñas / celulares */
+@media (max-width: 768px) {
+    .seccion-ubicacion {
+        flex-direction: column;
+    }
+}
+/* ==========================================
+    MEDIA QUERIES (ADAPTABILIDAD A MÓVILES)
+   ========================================== */
+@media (max-width: 768px) {
+    .navegacion {
+        height: auto;
+        flex-direction: column;
+        padding-right: 0;
+        padding-bottom: 10px;
+    }
+
+    .logo-contenedor {
+        margin-left: 0;
+        margin-top: 10px;
+        border-radius: 6px;
+    }
+
+    .logo-contenedor .logo {
+        height: 60px; /* Logo más pequeño en móviles */
+    }
+
+    .navegacion ul {
+        margin-left: 0;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .navegacion ul li a {
+        height: 50px;
+        padding: 0 12px;
+        font-size: 0.75rem;
+    }
+
+    .seccion-inicio {
+        padding: 40px 5%;
+        min-height: 70vh;
+        justify-content: center;
+    }
+
+    .texto-bienvenida {
+        padding: 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .titulo-principal {
+        font-size: 2.5rem;
+    } 
+
+}
