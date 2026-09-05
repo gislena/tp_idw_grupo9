@@ -6,37 +6,68 @@
     <title>Veterinaria Patas Arriba</title>
     <link rel="stylesheet" href="estilos/estilos.css">
 </head>
-
 <body>
 
-    <header>
-        <img src="assets/images/Logo.png" alt="Logo" width="200px">
-        <nav>
+    <!-- ENCABEZADO Y BARRA AZUL -->
+    <header class="encabezado">
+        <nav class="navegacion">
+            <div class="logo-contenedor">
+                <img src="./assets/images/Logo.png" alt="Logo Veterinaria Patas Arriba" class="logo">
+            </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="paginas/institucional.html">Información Institucional</a></li>
-                <li><a href="paginas/contacto.html">Contacto</a></li>
+                <li><a href="#inicio" class="activo">Home</a></li>
+                <li><a href="institucional.html">Información Institucional</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Cuidamos a tu mejor amigo</h1>
-        <img src="assets/images/VeterinariaPastorAleman.png" alt="VeterinariaPastorAleman" width="700px">
-        <p> En Veterinaria Patas arriba brindamos 
-            atencion medica veterinaria de calidad, con amor, compromiso y dedicacion. 
-            Nos enfocamos en la prevencion, 
-            el bienestar y la salud integral de tu mascota.
-        </p>
+    <!-- SECCIÓN PRINCIPAL -->
+    <main id="inicio">
+        <section class="seccion-inicio">
+            <!-- RECUADRO AZUL CON TEXTO SOBRE LA FOTO DE FONDO -->
+            <div class="texto-bienvenida">
+                <h1 class="titulo-principal">Cuidamos a tus mejores amigos</h1>
+                <p>En Veterinaria Patas Arriba brindamos atención médica de calidad, con el compromiso y cariño que tus mascotas merecen.</p>
+                <a href="#contacto" class="boton-principal">RESERVA TU TURNO</a>
+            </div>
+        </section>
 
-        <button>RESERVA TU TURNO</button>
+        <!-- SECCIÓN DE SERVICIOS CON TARJETAS ANIMADAS -->
+        <section id="servicios" class="servicios">
+            <h2 class="titulo-seccion">Nuestros Servicios</h2>
+            <div class="servicios-contenedor">
+                
+                <a href="#" class="tarjeta-servicio">
+                    <span class="icono-servicio">🩺</span>
+                    <h3>Consultas Generales</h3>
+                    <p>Chequeos preventivos y diagnósticos completos para la salud de tu mascota.</p>
+                    <span class="enlace-texto">Saber más →</span>
+                </a>
+
+                <a href="#" class="tarjeta-servicio">
+                    <span class="icono-servicio">💉</span>
+                    <h3>Vacunación</h3>
+                    <p>Planes de inmunización al día para perritos y gatitos.</p>
+                    <span class="enlace-texto">Saber más →</span>
+                </a>
+
+                <a href="#" class="tarjeta-servicio">
+                    <span class="icono-servicio">✂️</span>
+                    <h3>Peluquería Canina</h3>
+                    <p>Estética, lavado y cuidado del pelaje con productos especializados.</p>
+                    <span class="enlace-texto">Saber más →</span>
+                </a>
+
+            </div>
+        </section>
     </main>
-        
-    <footer>
-        <p>
-            Veterinaria Patas Arriba - IDW - FCAD UNER 2026
-        </p>
-    </footer>
-    
+
+    <!-- PIE DE PÁGINA -->
+    <footer id="contacto" class="pie-pagina">
+    <p>&copy; 2026 Veterinaria Patas Arriba - IDW - FCAD UNER</p>
+</footer>
+
 </body>
 </html>
