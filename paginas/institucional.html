@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Información Institucional | Veterinaria Patas Arriba</title>
-    <link rel="stylesheet" href="../estilos/estilos.css">
+    <link rel="stylesheet" href="estilos/estilos.css">
 </head>
 
 <body>
 
-    <header>
-        <img src="../assets/images/Logo.png" alt="Logo de Veterinaria Patas Arriba" width="200px">
+    <header class="encabezado">
+        <nav class="navegacion">
+            <div class="logo-contenedor">
+                <img src="./assets/images/Logo.png" alt="Logo Veterinaria Patas Arriba" class="logo">
+            </div>
 
-        <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="institucional.html">Información Institucional</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="institucional.html" class="activo">Información Institucional</a></li>
+                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="contactos.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <h1>Información Institucional</h1>
+    </header>
 
-        <section>
+    <!-- PEGAR DESDE ACÁ -->
+    <main class="contenedor-institucional">
+        <h1 class="titulo-seccion">Información Institucional</h1>
+
+        <section class="tarjeta-institucional">
             <h2>Quiénes somos</h2>
             <p>
                 Veterinaria Patas Arriba es un espacio dedicado al cuidado,
@@ -33,16 +39,18 @@
             </p>
         </section>
 
-        <section>
-            <h2>Nuestra misión</h2>
+        <section class="tarjeta-institucional">
+            <span class="icono-servicio">🎯</span>
+            <h2>Nuestra Misión</h2>
             <p>
                 Brindar atención veterinaria de calidad, acompañando a cada familia
                 en el cuidado de la salud y el bienestar de sus animales de compañía.
             </p>
         </section>
 
-        <section>
-            <h2>Nuestra visión</h2>
+        <section class="tarjeta-institucional">
+            <span class="icono-servicio">👁️</span>
+            <h2>Nuestra Visión</h2>
             <p>
                 Ser una veterinaria de referencia por nuestra atención cercana,
                 profesional y respetuosa, promoviendo una vida saludable y feliz
@@ -50,17 +58,17 @@
             </p>
         </section>
 
-        <section>
-            <h2>Nuestros valores</h2>
-            <ul>
-                <li>Amor y respeto por los animales.</li>
-                <li>Compromiso con cada paciente y su familia.</li>
-                <li>Atención responsable y profesional.</li>
-                <li>Prevención y cuidado de la salud animal.</li>
+        <section class="tarjeta-institucional">
+            <h2>Nuestros Valores</h2>
+            <ul class="lista-valores">
+                <li>🐾 Amor y respeto por los animales.</li>
+                <li>🐾 Compromiso con cada paciente y su familia.</li>
+                <li>🐾 Atención responsable y profesional.</li>
+                <li>🐾 Prevención y cuidado de la salud animal.</li>
             </ul>
         </section>
 
-        <section>
+        <section class="tarjeta-institucional">
             <h2>Compromiso con tu mascota</h2>
             <p>
                 En Patas Arriba entendemos que cada mascota es parte de la familia.
@@ -70,10 +78,6 @@
         </section>
     </main>
 
-    <footer>
-        <p>
-            Veterinaria Patas Arriba </p>
+    <footer id="contacto" class="pie-pagina">
+        <p>&copy; 2026 Veterinaria Patas Arriba - IDW - FCAD UNER</p>
     </footer>
-
-</body>
-</html>
