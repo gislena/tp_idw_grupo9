@@ -18,48 +18,49 @@
             <ul>
                 <li><a href="../index.html">Home</a></li>
                 <li><a href="institucional.html">Información Institucional</a></li>
-                <li><a href="index.html#servicios">Servicios</a></li>
+                <li><a href="../index.html#servicios">Servicios</a></li>
                 <li><a href="contactos.html" class="activo">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="contenido-principal">
+        <h1 class="titulo-seccion"> Contactanos </h1>
 
         <section class="seccion-contacto-arriba">
-            <h2 class="titulo-seccion">¿Dónde estamos?</h2>
-
-            <div class="seccion-ubicacion">
-                <div class="info-contacto-box">
-                    <div class="info-item">
-                        <h4>📍 Dirección</h4>
-                        <p>Av. Santa Fe 2000, CABA</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>📞 Llamanos</h4>
-                        <p><a href="tel:+541145555555">(011) 4555-5555</a></p>
-                        <p>Lunes a Viernes de 9 a 18hs</p>
-                    </div>
-                    <div class="info-item">
-                        <h4>📷 Seguinos</h4>
-                        <p><a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer">@patas.arriba.vete</a></p>
-                    </div>
+            <div class="card card-map">
+                <h2>Dónde estamos?</h2>
+                <iframe
+                    title="Ubicación de Veterinaria Patas Arriba"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.4370!3d-34.5895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzIyLjIiUyA1OMKwMjYnMTMuMiJX!5e0!3m2!1ses!2sar!4v1690000000000"
+                    allowfullscreen
+                    loading="lazy">
+                </iframe>
+                <div class="info-item">
+                    <p class="texto-descripcion">Av. Santa Fe 2000, CABA</p>
                 </div>
-
-                <div class="mapa-box">
-                    <iframe
-                        title="Ubicación de Veterinaria Patas Arriba"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.4370!3d-34.5895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzIyLjIiUyA1OMKwMjYnMTMuMiJX!5e0!3m2!1ses!2sar!4v1690000000000"
-                        allowfullscreen
-                        loading="lazy">
-                    </iframe>
+            </div>
+            <div class="card card-phone">
+                <h2>Llamanos</h2>
+                <div class="info-item">
+                    <p class="texto-descripcion">
+                        <a href="tel:+541145555555">(011) 4555-5555</a>
+                    </p>
+                    <p class="texto-descripcion">Lunes a Viernes de 9 a 18hs</p>
+                </div>
+            </div>
+            <div class="card card-social">
+                <h2>Seguinos</h2>
+                <div class="info-item">
+                    <p class="texto-descripcion">Mirá fotos de nuestros pacientes y novedades en Instagram</p>
+                    <a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer">@patas.arriba.vete</a>
                 </div>
             </div>
         </section>
 
         <section class="contact-form">
             <h2>Dejanos tu consulta</h2>
-            <form action="https://formspree.io/f/xrpgebyz" method="POST">
+            <form action="https://formspree.io/f/xrpgebyz" method="POST" target="_blank">
                 <label> Nombre: <input type="text" name="nombre" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"></label>
                 <label> Apellido: <input type="text" name="apellido" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"></label>
                 <label> Tu email: <input type="email" name="email" required></label>
