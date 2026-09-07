@@ -55,7 +55,7 @@ body {
 /* LOGO SOBREPUESTO EN UN CUADRO A LA IZQUIERDA */
 .logo-contenedor {
     background-color: var(--lino-suave);
-    padding: 8px 18px;
+    padding: 8px 8px;
     margin-left: 5%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     z-index: 10;
@@ -70,7 +70,7 @@ body {
 }
 
 .logo-contenedor .logo {
-    height: 85px;
+    height: 120px;
     width: auto;
     display: block;
 }
@@ -110,7 +110,6 @@ body {
     position: relative;
     width: 100%;
     min-height: 85vh;
-    /* Sale de la carpeta estilos (../) y entra a assets/images */
     background-image: url('../assets/images/VeterinariaPastorAleman.png');
     background-position: center;
     background-size: cover;
@@ -206,7 +205,7 @@ body {
     border: 2px solid transparent;
     border-radius: 14px;
     padding: 2.5rem 1.8rem;
-    text-decoration: none; /* Le quita el azul y el subrayado feo */
+    text-decoration: none;
     color: var(--texto-oscuro);
     display: flex;
     flex-direction: column;
@@ -242,7 +241,7 @@ body {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* EFECTOS HOVER (ANIMACIÓN DE TARJETAS) */
+/* EFECTOS HOVER */
 .tarjeta-servicio:hover {
     transform: translateY(-10px);
     border-color: var(--gris-ceniza);
@@ -276,8 +275,74 @@ footer#contacto p {
     font-family: var(--fuente-principal);
     letter-spacing: 0.5px;
 } 
+
+/* ==========================================
+    NUESTRO EQUIPO
+   ========================================== */
+.equipo {
+    padding: 5rem 2rem;
+    text-align: center;
+    background-color: var(--petalo-polvo);
+}
+
+.equipo-contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-empleado {
+    background-color: var(--blanco);
+    border: 2px solid transparent;
+    border-radius: 14px;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1),
+                box-shadow 0.35s ease,
+                border-color 0.35s ease;
+}
+
+.tarjeta-empleado:hover {
+    transform: translateY(-10px);
+    border-color: var(--gris-ceniza);
+    box-shadow: 0 14px 28px rgba(58, 88, 126, 0.18);
+}
+
+.foto-empleado {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.2rem;
+    border: 3px solid var(--azul-crepusculo);
+}
+
+.tarjeta-empleado h3 {
+    color: var(--azul-crepusculo);
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+}
+
+.ocupacion-empleado {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 0.8rem;
+}
+
+.precio-empleado {
+    font-weight: bold;
+    color: var(--broncearse);
+    font-size: 1rem;
+}
+
+
     /* ==========================================
-    6. PÁGINA INSTITUCIONAL
+    PÁGINA INSTITUCIONAL
     ========================================== */
 .contenedor-institucional {
     max-width: 1000px;
@@ -294,7 +359,6 @@ footer#contacto p {
     padding: 2.5rem 2rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     text-align: center;
-    /* Transición para la animación hover */
     transition: transform 0.35s cubic-bezier(0.25, 0.8, 0.25, 1), 
                 box-shadow 0.35s ease, 
                 border-color 0.35s ease;
@@ -338,7 +402,7 @@ footer#contacto p {
    ESTILOS PÁGINA DE CONTACTO
    ========================================== */
 
-/* Contenedor general */
+
 .contenido-principal {
     max-width: 1100px;
     margin: 40px auto;
@@ -348,7 +412,7 @@ footer#contacto p {
     gap: 45px;
 }
 
-/* Títulos con la misma tipografía e identidad del sitio */
+
 .titulo-contacto {
     text-align: center;
     font-size: 2.2rem;
@@ -356,7 +420,7 @@ footer#contacto p {
     margin-bottom: 25px;
 }
 
-/* Estructura en 2 Columnas (Info Izquierda - Mapa Derecha) */
+/* Estructura en 2 Columnas */
 .seccion-ubicacion {
     display: flex;
     flex-direction: row;
@@ -470,7 +534,7 @@ footer#contacto p {
     min-height: 120px;
 }
 
-/* Footer Azul con WhatsApp Integrado a la Derecha */
+
 .pie-pagina {
     display: flex;
     justify-content: space-between;
@@ -486,9 +550,16 @@ footer#contacto p {
     margin: 0;
 }
 
+.whatsapp-footer-link {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
 .whatsapp-footer-link img {
-    width: 90px;
-    height: 90px;
+    width: 70px;
+    height: 70px;
     display: block;
     transition: transform 0.2s ease;
 }
@@ -521,7 +592,7 @@ footer#contacto p {
     }
 
     .logo-contenedor .logo {
-        height: 60px; /* Logo más pequeño en móviles */
+        height: 60px; 
     }
 
     .navegacion ul {
@@ -613,4 +684,3 @@ footer#contacto p {
     margin-bottom: 1rem;
     text-align: center;
 }
-
