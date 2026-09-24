@@ -4,89 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Veterinaria Patas Arriba - Contacto</title>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../estilos/bootstrapContacto.css">
     <link rel="stylesheet" href="../estilos/estilos.css">
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100">
 
-    <header class="encabezado">
-        <nav class="navbar navbar-expand-lg navegacion" aria-label="Navegación principal">
-            <div class="logo-contenedor">
-                <img src="../assets/images/Logo.png" alt="Logo Veterinaria Patas Arriba" class="logo">
-            </div>
+        <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg bg-primary shadow">
+            <div class="container">
+            
+            <a class="navbar-brand p-0" href="../index.html">
+                <img src="../assets/images/Logo.png" alt="Logo Veterinaria Patas Arriba" class="logo" height="48">
+            </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="menuPrincipal">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
-                    <li class="nav-item"><a href="institucional.html" class="nav-link">Información institucional</a></li>
-                    <li class="nav-item"><a href="../index.html#servicios" class="nav-link">Servicios</a></li>
-                    <li class="nav-item"><a href="contactos.html" class="nav-link activo">Contacto</a></li>
-                    <li class="nav-item"><button id="botonTema" class="nav-link boton-tema" type="button" aria-pressed="false">🌙 Modo oscuro</button></li>
+                <ul class="navbar-nav ms-auto mb-0">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="institucional.html">Información Institucional</a></li>
+                <li class="nav-item"><a class="nav-link" href="../index.html#servicios">Servicios</a></li>
+                <li class="nav-item"><a class="nav-link" href="contactos.html">Contacto</a></li>
                 </ul>
             </div>
+            </div>
         </nav>
-    </header>
+        </header>
 
-    <main class="contenido-principal">
-        <h1 class="titulo-seccion"> Contactanos </h1>
 
-        <section class="seccion-contacto-arriba">
-            <div class="card card-map">
-                <h2>Dónde estamos?</h2>
-                <iframe
-                    title="Ubicación de Veterinaria Patas Arriba"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.4370!3d-34.5895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzIyLjIiUyA1OMKwMjYnMTMuMiJX!5e0!3m2!1ses!2sar!4v1690000000000"
-                    allowfullscreen
-                    loading="lazy">
-                </iframe>
-                <div class="info-item">
-                    <p class="texto-descripcion">Av. Santa Fe 2000, CABA</p>
-                </div>
-            </div>
-            <div class="card card-phone">
-                <h2>Llamanos</h2>
-                <div class="info-item">
-                    <p class="texto-descripcion">
-                        <a href="tel:+541145555555">(011) 4555-5555</a>
-                    </p>
-                    <p class="texto-descripcion">Lunes a Viernes de 9 a 18hs</p>
-                </div>
-            </div>
-            <div class="card card-social">
-                <h2>Seguinos</h2>
-                <div class="info-item">
-                    <p class="texto-descripcion">Mirá fotos de nuestros pacientes y novedades en Instagram</p>
-                    <a href="https://www.instagram.com/patas.arriba.vete" target="_blank" rel="noopener noreferrer">@patas.arriba.vete</a>
+    <main class="flex-grow-1">
+
+        <div class="container pt-5">
+            <h1 class="titulo-seccion text-center">Contactanos</h1>
+        </div>
+
+        <section class="franja-tarjetas-contacto py-5 mt-4">
+            <div class="container">
+                <div class="row g-4">
+
+                    <div class="col-12 col-lg-4 align-self-center">
+                        <div class="card h-auto shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-body">
+                                <h2 class="card-title">Llamanos</h2>
+                                <p class="card-text mb-1">
+                                    <a href="tel:+541145555555">(011) 4555-5555</a>
+                                </p>
+                                <p class="card-text text-body-secondary mb-0">
+                                    Lunes a Viernes de 9 a 18hs
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4" >
+                        <div class="card h-100 shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-header bg-white">
+                                <h2 class="mb-0">Dónde estamos?</h2>
+                            </div>
+                            <div class="card-body">
+                                <div class="ratio ratio-4x3">
+                                <iframe
+                                    class="rounded-3"
+                                    title="Ubicación de Veterinaria Patas Arriba"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.2!2d-58.4370!3d-34.5895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzTCsDM1JzIyLjIiUyA1OMKwMjYnMTMuMiJX!5e0!3m2!1ses!2sar!4v1690000000000"
+                                    allowfullscreen
+                                    loading="lazy">
+                                </iframe>
+                                </div>
+                            </div>
+                            <div class="card-footer bg-white">
+                                <p class="card-text mb-0">Av. Santa Fe 2000, CABA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-4 align-self-center">
+                        <div class="card h-auto shadow-sm rounded-4 overflow-hidden">
+                            <div class="card-body">
+                                <h2 class="card-title">Seguinos</h2>
+                                <p class="card-text">Mirá fotos de nuestros pacientes y novedades en Instagram</p>
+                                <a class="btn btn-primary btn-lg px-5" href="https://www.instagram.com/patas.arriba.vete"
+                                   id="linkInstagram" target="_blank" rel="noopener noreferrer">@patas.arriba.vete</a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
 
-        <section class="contact-form">
-            <h2>Dejanos tu consulta</h2>
-            <form action="https://formspree.io/f/xrpgebyz" method="POST" target="_blank">
-                <label> Nombre: <input type="text" name="nombre" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"></label>
-                <label> Apellido: <input type="text" name="apellido" required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras"></label>
-                <label> Tu email: <input type="email" name="email" required></label>
-                <label> Tu mensaje: <textarea name="message" required></textarea></label>
-                <button type="submit" class="boton-principal">Enviar</button>
-            </form>
+        <section class="franja-form-contacto py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-md-10 col-lg-8">
+                        <div class="card shadow rounded-4 overflow-hidden">
+                            <div class="card-body p-4 p-md-5">
+                                <h2 class="text-center mb-4">Dejanos tu consulta</h2>
+
+                                <div id="alertaForm" role="alert"></div>
+
+                                <form id="formContacto" action="https://formspree.io/f/xrpgebyz" method="POST" class="row g-3">
+
+                                    <div class="col-md-6">
+                                        <label for="nombre" class="form-label fw-semibold">Nombre</label>
+                                        <input type="text" class="form-control" id="nombre" name="nombre"
+                                               required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="apellido" class="form-label fw-semibold">Apellido</label>
+                                        <input type="text" class="form-control" id="apellido" name="apellido"
+                                               required minlength="2" pattern="[A-Za-záéíóúñÑ ]+" title="Solo letras">
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="email" class="form-label fw-semibold">Tu email</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text">@</span>
+                                            <input type="email" class="form-control" id="email" name="email" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <p class="fw-semibold mb-2">Motivo de la consulta</p>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="motivo" id="motivoGeneral" value="Consulta general" checked>
+                                            <label class="form-check-label" for="motivoGeneral">Consulta general</label>
+                                        </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="motivo" id="motivoTurno" value="Sacar turno">
+                                            <label class="form-check-label" for="motivoTurno">Sacar turno</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12 d-none" id="datosTurno">
+                                        <div class="row g-3">
+                                            <div class="col-md-6">
+                                                <label for="nombreMascota" class="form-label fw-semibold">Nombre de la mascota</label>
+                                                <input type="text" class="form-control" id="nombreMascota" name="nombre_mascota">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="tipoMascota" class="form-label fw-semibold">Tipo de mascota</label>
+                                                <select class="form-select" id="tipoMascota" name="tipo_mascota">
+                                                    <option value="">Elegí una opción</option>
+                                                    <option value="Gato">Gato</option>
+                                                    <option value="Perro">Perro</option>
+                                                    <option value="Loro">Loro</option>
+                                                    <option value="Tortuga">Tortuga</option>
+                                                    <option value="Otro">Otro</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-12">
+                                                <label for="fecha" class="form-label fw-semibold">Fecha que te gustaría el turno</label>
+                                                <input type="date" class="form-control" id="fecha" name="fecha">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="message" class="form-label fw-semibold">Tu mensaje</label>
+                                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                                    </div>
+
+                                    <div class="col-12 d-grid d-md-flex justify-content-md-end">
+                                        <button type="submit" class="btn btn-primary btn-lg px-5">Enviar</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <footer class="pie-pagina">
-        <p class="texto-descripcion">
-            Veterinaria Patas Arriba - IDW - FCAD UNER 2026
-        </p>
-        <a href="https://wa.me/5491100000000" class="whatsapp-footer-link" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-            <img src="../assets/images/logowhatsapp.png" alt="WhatsApp">
-        </a>
+    <footer class="bg-primary text-white text-center py-3 mt-auto">
+        <p class="mb-0 small">Veterinaria Patas Arriba - IDW - FCAD UNER 2026</p>
     </footer>
+
+    <a href="https://wa.me/5491100000000" class="whatsapp-footer-link" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <img src="../assets/images/logowhatsapp.png" alt="WhatsApp">
+    </a>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/contacto.js"></script>
     <script src="../scripts/tema.js"></script>
 
 </body>
