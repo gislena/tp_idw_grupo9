@@ -1,0 +1,112 @@
+.navbar {
+    background-color: var(--azul-crepusculo) !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+.navbar .nav-link {
+    color: var(--blanco) !important;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    padding: 0 22px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+.navbar .nav-link.active,
+.navbar .nav-link:hover {
+    background-color: #1a2e47; 
+    color: var(--blanco);
+}
+
+
+.navbar .logo {
+    height: 120px;
+    width: auto;
+}
+
+
+
+
+.contenido-principal {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+
+.titulo-contacto {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--azul-crepusculo);
+    margin-bottom: 25px;
+}
+
+
+.contact-form {
+    background-color: #ffffff;
+    padding: 35px 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    width: 100%;
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--azul-crepusculo);
+    box-shadow: 0 0 0 3px rgba(58, 88, 126, 0.15);
+}
+
+
+.mapa-box iframe {
+    width: 100%;
+    height: 320px;
+    border: none;
+    border-radius: 12px;
+}
+
+
+footer#contacto,
+.pie-pagina {
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
+    text-align: center;
+    padding: 1.2rem 1rem;
+    font-size: 0.9rem;
+}
+
+
+.whatsapp-footer-link img {
+    width: 70px;
+    height: 70px;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+.whatsapp-footer-link img:hover {
+    transform: scale(1.15);
+}
+
