@@ -16,6 +16,14 @@
     --fuente-titulos:   'Dancing Script', cursive;
 }
 
+body.modo-oscuro {
+    --lino-suave: #18212b;
+    --petalo-polvo: #202b36;
+    --blanco: #263442;
+    --texto-oscuro: #f1f4f6;
+    --gris-ceniza: #78909c;
+}
+
 /* Reset general */
 * {
     margin: 0;
@@ -683,4 +691,65 @@ footer#contacto p {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     text-align: center;
+}
+
+/* Navbar Bootstrap: conserva la identidad visual del sitio. */
+.navegacion .navbar-toggler {
+    border-color: var(--blanco);
+    margin-right: 1rem;
+}
+
+.navegacion .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.navegacion .nav-link {
+    color: var(--blanco);
+}
+
+.navegacion .nav-link:hover,
+.navegacion .nav-link.activo {
+    color: var(--blanco);
+    background-color: #1a2e47;
+}
+
+.navegacion .boton-tema {
+    border: 0;
+    font: inherit;
+    cursor: pointer;
+}
+
+body.modo-oscuro .texto-bienvenida,
+body.modo-oscuro .tarjeta-servicio,
+body.modo-oscuro .tarjeta-empleado,
+body.modo-oscuro .tarjeta-institucional,
+body.modo-oscuro .card,
+body.modo-oscuro .contact-form {
+    background-color: #263442;
+    color: var(--texto-oscuro);
+}
+
+body.modo-oscuro .tarjeta-servicio p,
+body.modo-oscuro .ocupacion-empleado,
+body.modo-oscuro .info-item p,
+body.modo-oscuro .info-item a,
+body.modo-oscuro .contact-form label {
+    color: #d7e0e5;
+}
+
+body.modo-oscuro .contact-form input,
+body.modo-oscuro .contact-form textarea {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
+    border-color: #78909c;
+}
+
+@media (max-width: 991.98px) {
+    .navegacion .navbar-collapse {
+        width: 100%;
+    }
+
+    .navegacion .navbar-nav {
+        align-items: center;
+    }
 }
