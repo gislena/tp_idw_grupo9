@@ -1,112 +1,176 @@
-.navbar {
+.bg-primary {
     background-color: var(--azul-crepusculo) !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
-
 
 .navbar .nav-link {
     color: var(--blanco) !important;
     font-weight: 700;
     font-size: 0.85rem;
     letter-spacing: 0.8px;
-    padding: 0 22px;
     text-transform: uppercase;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-
 .navbar .nav-link.active,
-.navbar .nav-link:hover {
-    background-color: #1a2e47; 
-    color: var(--blanco);
+.navbar .nav-link:hover,
+.navbar .nav-link:focus {
+    background-color: #1a2e47;
+    color: var(--blanco) !important;
+}
+
+/* Botón de modo oscuro */
+.navbar .boton-tema {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    font: inherit;
+}
+
+/* Botón hamburguesa */
+.navbar .navbar-toggler {
+    border-color: var(--blanco);
+}
+
+.navbar .navbar-toggler-icon {
+    filter: invert(1);
+}
+
+.btn-primary {
+    --bs-btn-bg: #3A587E;
+    --bs-btn-border-color: #3A587E;
+    --bs-btn-hover-bg: #D5AD89;
+    --bs-btn-hover-border-color: #D5AD89;
+    --bs-btn-active-bg: #D5AD89;
+    --bs-btn-active-border-color: #D5AD89;
+    --bs-btn-disabled-bg: #3A587E;
+    --bs-btn-disabled-border-color: #3A587E;
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #3A587E;
+    --bs-btn-border-color: #3A587E;
+    --bs-btn-hover-bg: #3A587E;
+    --bs-btn-hover-border-color: #3A587E;
+    --bs-btn-active-bg: #3A587E;
+    --bs-btn-active-border-color: #3A587E;
+}
+
+.form-control:focus {
+    border-color: #3A587E;
+    box-shadow: 0 0 0 0.25rem rgba(58, 88, 126, 0.25);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 700;
+}
+
+.franja-tarjetas-contacto {
+    background-color: var(--petalo-polvo);
+}
+
+.franja-form-contacto {
+    background-color: var(--petalo-polvo);
 }
 
 
-.navbar .logo {
-    height: 120px;
-    width: auto;
+.fila-contacto {
+    align-items: center;
 }
 
-
-
-
-.contenido-principal {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 45px;
+.tarjeta-contacto {
+    height: auto;
+    padding: 0;
+    text-align: left;
+    align-items: stretch;
 }
 
+.tarjeta-contacto .card-body,
+.tarjeta-contacto .card-header,
+.tarjeta-contacto .card-footer {
+    padding: 0rem;
+}
 
-.titulo-contacto {
-    text-align: center;
-    font-size: 2.2rem;
+.tarjeta-contacto .card-header,
+.tarjeta-contacto .card-footer {
+    background-color: var(--blanco);
+}
+
+.tarjeta-contacto .card-header h2 {
     color: var(--azul-crepusculo);
-    margin-bottom: 25px;
+}
+
+.tarjeta-contacto .card-body > h2 {
+    color: var(--azul-crepusculo);
+}
+
+.tarjeta-contacto .card-body > p > a {
+    color: var(--azul-crepusculo);
+}
+
+.tarjeta-mapa .ratio {
+    border-radius: 0.5rem;
+    overflow: hidden;
 }
 
 
-.contact-form {
-    background-color: #ffffff;
-    padding: 35px 40px;
-    border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+@media (max-width: 991.98px) {
+    .tarjeta-mapa .ratio {
+        min-height: 250px;
+    }
+}
+
+
+.tarjeta-mapa .card-body {
+    padding: 1rem;
+}
+
+.tarjeta-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.tarjeta-contacto .card-body {
+    padding: 0rem;
+}
+
+.tarjeta-contacto .card-body p:last-child {
+    margin-bottom: 0;
+}
+
+
+.fila-contacto {
+    align-items: stretch;
+}
+
+.fila-contacto > * {
+    display: flex;
+}
+
+.fila-contacto .tarjeta-contacto {
     width: 100%;
 }
 
-.contact-form form {
+.franja-tarjetas-contacto .tarjeta-contacto {
+  height: 100%;
+  min-height: 420px;
+}
+
+.tarjeta-centrada {
     display: flex;
     flex-direction: column;
-    gap: 18px;
-}
-
-
-.contact-form input,
-.contact-form textarea {
-    padding: 12px 15px;
-    border: 1px solid #cccccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-family: inherit;
-    transition: border-color 0.2s, box-shadow 0.2s;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: var(--azul-crepusculo);
-    box-shadow: 0 0 0 3px rgba(58, 88, 126, 0.15);
-}
-
-
-.mapa-box iframe {
-    width: 100%;
-    height: 320px;
-    border: none;
-    border-radius: 12px;
-}
-
-
-footer#contacto,
-.pie-pagina {
-    background-color: var(--azul-crepusculo);
-    color: var(--blanco);
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 1.2rem 1rem;
-    font-size: 0.9rem;
 }
 
-
-.whatsapp-footer-link img {
-    width: 70px;
-    height: 70px;
-    display: block;
-    transition: transform 0.2s ease;
-}
-
-.whatsapp-footer-link img:hover {
-    transform: scale(1.15);
+.tarjeta-centrada .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
