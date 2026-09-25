@@ -8,6 +8,7 @@ Trabajo Final Integrador - Introducción al Desarrollo Web
 - Belen Fehr
 - Gislena Gil Lopez
 - Sabrina Meritano
+- Abigail Vergara
 
 ## Descripción
 
