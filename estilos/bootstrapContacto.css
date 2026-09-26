@@ -97,11 +97,11 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .tarjeta-contacto .card-header h2 {
-    color: var(--azul-crepusculo);
+    color: var(--broncearse);
 }
 
 .tarjeta-contacto .card-body > h2 {
-    color: var(--azul-crepusculo);
+    color: var(--broncearse);
 }
 
 .tarjeta-contacto .card-body > p > a {
@@ -123,12 +123,15 @@ h1, h2, h3, h4, h5, h6,
 
 .tarjeta-mapa .card-body {
     padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .tarjeta-mapa iframe {
     display: block;
     width: 100%;
-    height: 100%;
+    height: 300px;
     border: 0;
 }
 
@@ -172,4 +175,32 @@ h1, h2, h3, h4, h5, h6,
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.navbar-brand.p-0 {
+    margin-left: 5%;
+}
+
+.navbar-brand .logo {
+    height: 90px;
+}
+
+.navbar {
+    height: 75px;
+}
+
+.navbar .container-fluid {
+    height: 100%;
+    align-items: center;
+}
+
+body.modo-oscuro .navbar .nav-link,
+body.modo-oscuro .navbar .nav-link.active,
+body.modo-oscuro .navbar .nav-link:hover,
+body.modo-oscuro .navbar .nav-link:focus {
+    color: #ffffff !important;
+}
+
+.franja-form-contacto h2 {
+    color: var(--broncearse);
 }
