@@ -66,14 +66,10 @@ body {
 
 /* LOGO SOBREPUESTO EN UN CUADRO A LA IZQUIERDA */
 .logo-contenedor {
-    background-color: var(--lino-suave);
-    padding: 8px 8px;
     margin-left: 5%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
     z-index: 10;
     display: flex;
     align-items: center;
-    border-radius: 0 0 6px 6px;
     transition: transform 0.3s ease;
 }
 
@@ -546,7 +542,7 @@ footer#contacto p {
     min-height: 120px;
 }
 
-
+/**
 .pie-pagina {
     display: flex;
     justify-content: space-between;
@@ -561,7 +557,7 @@ footer#contacto p {
     color: #ffffff;
     margin: 0;
 }
-
+**/
 .whatsapp-footer-link {
     position: fixed;
     bottom: 20px;
@@ -731,11 +727,28 @@ footer#contacto p {
     color: var(--blanco);
     background-color: #1a2e47;
 }
-
+/**
 .navegacion .boton-tema {
     border: 0;
     font: inherit;
     cursor: pointer;
+}
+**/
+.navegacion .boton-tema {
+    border: 0;
+    background-color: transparent;
+    font: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 75px;
+    padding: 0 22px;
+    color: var(--blanco);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.modo-oscuro .texto-bienvenida,
