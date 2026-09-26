@@ -60,6 +60,10 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
+.navegacion > .contenedor-navegacion {
+    display: contents;
+}
+
 /* LOGO SOBREPUESTO EN UN CUADRO A LA IZQUIERDA */
 .logo-contenedor {
     background-color: var(--lino-suave);
@@ -290,7 +294,7 @@ footer#contacto p {
 .equipo {
     padding: 5rem 2rem;
     text-align: center;
-    background-color: var(--petalo-polvo);
+    background-color: var(--lino-suave);
 }
 
 .equipo-contenedor {
@@ -588,15 +592,30 @@ footer#contacto p {
 @media (max-width: 768px) {
     .navegacion {
         height: auto;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
         padding-right: 0;
         padding-bottom: 10px;
     }
 
     .logo-contenedor {
-        margin-left: 0;
+        order: 2;
+        margin-left: auto;
+        margin-right: 1rem;
         margin-top: 10px;
         border-radius: 6px;
+    }
+
+    .navegacion .navbar-toggler {
+        order: 1;
+        margin-left: 1rem;
+        margin-right: 0;
+    }
+
+    .navegacion .navbar-collapse {
+        order: 3;
+        flex-basis: 100%;
     }
 
     .logo-contenedor .logo {
@@ -734,6 +753,24 @@ body.modo-oscuro .ocupacion-empleado,
 body.modo-oscuro .info-item p,
 body.modo-oscuro .info-item a,
 body.modo-oscuro .contact-form label {
+    color: #d7e0e5;
+}
+
+body.modo-oscuro .titulo-seccion,
+body.modo-oscuro .texto-bienvenida .titulo-principal,
+body.modo-oscuro .tarjeta-empleado h3,
+body.modo-oscuro .tarjeta-servicio h3,
+body.modo-oscuro .tarjeta-institucional h2,
+body.modo-oscuro .navegacion .nav-link {
+    color: #ffffff;
+}
+
+body.modo-oscuro .texto-bienvenida .boton-principal {
+    color: #ffffff;
+}
+
+body.modo-oscuro .tarjeta-institucional p,
+body.modo-oscuro .lista-valores li {
     color: #d7e0e5;
 }
 
