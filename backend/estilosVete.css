@@ -1,0 +1,87 @@
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #198754;
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.card-header {
+    font-weight: 600;
+}
+
+.form-label {
+    font-weight: 500;
+}
+
+.form-control:focus {
+    border-color: #198754;
+    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+}
+
+#totalVeterinarios {
+    font-weight: bold;
+    color: #198754;
+}
+
+.table {
+    background-color: white;
+}
+
+.table th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+.btn-warning {
+    margin-right: 5px;
+}
+
+.btn-sm {
+    min-width: 80px;
+}
+
+.table-responsive {
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+tbody tr:hover {
+    background-color: rgba(25, 135, 84, 0.05);
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .btn-sm {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .btn-warning {
+        margin-right: 0;
+    }
+
+    td:last-child {
+        min-width: 120px;
+    }
+}
