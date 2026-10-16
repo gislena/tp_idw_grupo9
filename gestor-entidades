@@ -1,0 +1,215 @@
+/*
+ * Gestor reutilizable para las páginas de entidades.
+ * Cada página le pasa su configuración (clave de LocalStorage, campos y columnas).
+ * Requiere <script type="module"> en el HTML.
+ */
+
+export function generarId() {
+  if (globalThis.crypto?.randomUUID) return globalThis.crypto.randomUUID();
+  return `id-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+}
+
+function leerRegistros(clave) {
+  try {
+    const datos = JSON.parse(localStorage.getItem(clave) ?? '[]');
+    return Array.isArray(datos) ? datos : [];
+  } catch {
+    return [];
+  }
+}
+
+function guardarRegistros(clave, registros) {
+  localStorage.setItem(clave, JSON.stringify(registros));
+}
+
+function crearCelda(valor) {
+  const celda = document.createElement('td');
+  celda.textContent = valor == null ? '' : String(valor);
+  return celda;
+}
+
+/**
+ * Inicializa alta, listado, edición y eliminación para una entidad.
+ *
+ * Configuración:
+ * - clave: clave exclusiva de LocalStorage.
+ * - idField: nombre de la propiedad identificadora.
+ * - form, tbody, count: selectores CSS de los elementos HTML.
+ * - fields: [{ name, type, required, min, step }].
+ * - columns: [{ label, value(registro) }].
+ * - submitLabel: texto del botón de guardar.
+ * - cancelSelector: selector opcional del botón para cancelar edición.
+ * - onError: callback opcional para mostrar errores.
+ */
+export function crearGestorEntidad(config) {
+  const form = document.querySelector(config.form);
+  const tbody = document.querySelector(config.tbody);
+  const count = config.count ? document.querySelector(config.count) : null;
+  const idInput = document.querySelector(config.idInput);
+  const submitButton = form?.querySelector('[type="submit"]');
+  const cancelButton = config.cancelSelector
+    ? document.querySelector(config.cancelSelector)
+    : null;
+
+  if (!form || !tbody) {
+    throw new Error(`Falta el formulario (${config.form}) o el tbody (${config.tbody}).`);
+  }
+  if (!config.clave || !config.idField || !Array.isArray(config.fields) || !Array.isArray(config.columns)) {
+    throw new Error('La configuración debe incluir clave, idField, fields y columns.');
+  }
+
+  let registros = leerRegistros(config.clave);
+  let idEditando = null;
+
+  function mostrarError(error) {
+    if (typeof config.onError === 'function') config.onError(error);
+    else window.alert(error);
+  }
+
+  function actualizar() {
+    tbody.replaceChildren();
+
+    if (registros.length === 0) {
+      const fila = document.createElement('tr');
+      const celda = document.createElement('td');
+      celda.colSpan = config.columns.length + 1;
+      celda.className = 'text-center text-muted';
+      celda.textContent = config.emptyMessage ?? 'Todavía no hay registros.';
+      fila.append(celda);
+      tbody.append(fila);
+    } else {
+      for (const registro of registros) {
+        const fila = document.createElement('tr');
+        for (const columna of config.columns) {
+          let valor = '';
+          try {
+            valor = columna.value(registro);
+          } catch {
+            valor = '';
+          }
+          fila.append(crearCelda(valor));
+        }
+
+        const acciones = document.createElement('td');
+        acciones.className = 'text-nowrap';
+        const editar = document.createElement('button');
+        editar.type = 'button';
+        editar.className = 'btn btn-sm btn-outline-primary me-2';
+        editar.textContent = 'Editar';
+        editar.dataset.accion = 'editar';
+        editar.dataset.id = registro[config.idField];
+
+        const eliminar = document.createElement('button');
+        eliminar.type = 'button';
+        eliminar.className = 'btn btn-sm btn-outline-danger';
+        eliminar.textContent = 'Eliminar';
+        eliminar.dataset.accion = 'eliminar';
+        eliminar.dataset.id = registro[config.idField];
+        acciones.append(editar, eliminar);
+        fila.append(acciones);
+        tbody.append(fila);
+      }
+    }
+
+    if (count) count.textContent = String(registros.length);
+  }
+
+  function reiniciarFormulario() {
+    form.reset();
+    idEditando = null;
+    if (idInput) idInput.value = '';
+    if (submitButton && config.submitLabel) submitButton.textContent = config.submitLabel;
+    if (cancelButton) cancelButton.hidden = true;
+  }
+
+  function cargarParaEditar(registro) {
+    for (const campo of config.fields) {
+      const input = form.elements.namedItem(campo.name);
+      if (input) input.value = registro[campo.name] ?? '';
+    }
+    idEditando = registro[config.idField];
+    if (idInput) idInput.value = idEditando;
+    if (submitButton) submitButton.textContent = config.editLabel ?? 'Guardar cambios';
+    if (cancelButton) cancelButton.hidden = false;
+    form.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+
+  form.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+    if (!form.reportValidity()) return;
+
+    const registro = {};
+    for (const campo of config.fields) {
+      const input = form.elements.namedItem(campo.name);
+      if (!input) {
+        mostrarError(`No se encontró el campo "${campo.name}" en el formulario.`);
+        return;
+      }
+      const valor = input.value.trim();
+      if (campo.type === 'number') {
+        const numero = input.valueAsNumber;
+        if (!Number.isFinite(numero)) {
+          input.reportValidity();
+          return;
+        }
+        if (campo.integer && !Number.isInteger(numero)) {
+          mostrarError(`El campo "${campo.label ?? campo.name}" debe ser un número entero.`);
+          input.focus();
+          return;
+        }
+        registro[campo.name] = numero;
+      } else {
+        registro[campo.name] = valor;
+      }
+    }
+
+    if (idEditando) {
+      registros = registros.map((item) =>
+        item[config.idField] === idEditando ? { ...item, ...registro, [config.idField]: idEditando } : item
+      );
+    } else {
+      registro[config.idField] = generarId();
+      registros.push(registro);
+    }
+
+    try {
+      guardarRegistros(config.clave, registros);
+      actualizar();
+      reiniciarFormulario();
+    } catch {
+      mostrarError('No se pudieron guardar los datos en LocalStorage.');
+    }
+  });
+
+  tbody.addEventListener('click', (evento) => {
+    const boton = evento.target.closest('button[data-accion]');
+    if (!boton || !tbody.contains(boton)) return;
+    const id = boton.dataset.id;
+    const registro = registros.find((item) => String(item[config.idField]) === id);
+    if (!registro) return;
+
+    if (boton.dataset.accion === 'editar') {
+      cargarParaEditar(registro);
+    } else if (boton.dataset.accion === 'eliminar') {
+      const mensaje = config.confirmDeleteMessage ?? '¿Querés eliminar este registro?';
+      if (!window.confirm(mensaje)) return;
+      registros = registros.filter((item) => String(item[config.idField]) !== id);
+      try {
+        guardarRegistros(config.clave, registros);
+        if (idEditando === id) reiniciarFormulario();
+        actualizar();
+      } catch {
+        mostrarError('No se pudo actualizar LocalStorage.');
+      }
+    }
+  });
+
+  cancelButton?.addEventListener('click', reiniciarFormulario);
+  actualizar();
+
+  return {
+    listar: () => [...registros],
+    actualizar,
+    reiniciarFormulario,
+  };
+}
