@@ -803,3 +803,118 @@ body.modo-oscuro .contact-form textarea {
         align-items: center;
     }
 }
+
+.pagina-turnos .titulo-seccion {
+    margin-bottom: 1rem;
+}
+
+.tarjeta-turnos {
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-turnos h2 {
+    color: var(--azul-crepusculo);
+}
+
+.tabla-turnos {
+    margin-bottom: 0;
+}
+
+.tabla-turnos thead th {
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
+    white-space: nowrap;
+}
+
+body.modo-oscuro .tarjeta-turnos {
+    background-color: #263442;
+    color: var(--texto-oscuro);
+}
+
+body.modo-oscuro .tarjeta-turnos h2 {
+    color: #ffffff;
+}
+
+body.modo-oscuro .pagina-turnos .form-control {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
+    border-color: #78909c;
+}
+
+body.modo-oscuro .pagina-turnos .form-control:focus {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
+}
+
+body.modo-oscuro .pagina-turnos .tabla-turnos {
+    --bs-table-color: #f1f4f6;
+    --bs-table-bg: transparent;
+    --bs-table-hover-color: #ffffff;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.08);
+    --bs-table-border-color: #536675;
+}
+
+@media (max-width: 576px) {
+    .tarjeta-turnos {
+        padding: 1.25rem;
+    }
+}
+/* PÁGINA DE HISTORIA CLÍNICA */
+.pagina-historia-clinica .titulo-seccion {
+    margin-bottom: 1rem;
+}
+
+.tarjeta-historia {
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.tarjeta-historia h2 {
+    color: var(--azul-crepusculo);
+}
+
+.tabla-historia {
+    margin-bottom: 0;
+}
+
+.tabla-historia thead th {
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
+    white-space: nowrap;
+}
+
+body.modo-oscuro .tarjeta-historia {
+    background-color: #263442;
+    color: var(--texto-oscuro);
+}
+
+body.modo-oscuro .tarjeta-historia h2 {
+    color: #ffffff;
+}
+
+body.modo-oscuro .pagina-historia-clinica .form-control {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
+    border-color: #78909c;
+}
+
+body.modo-oscuro .pagina-historia-clinica .tabla-historia {
+    --bs-table-color: #f1f4f6;
+    --bs-table-bg: transparent;
+    --bs-table-hover-color: #ffffff;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.08);
+    --bs-table-border-color: #536675;
+}
+
+@media (max-width: 576px) {
+    .tarjeta-historia {
+        padding: 1.25rem;
+    }
+}
