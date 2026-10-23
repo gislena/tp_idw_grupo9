@@ -1,86 +1,90 @@
-body {
-    background-color: #f8f9fa;
-    min-height: 100vh;
+.pagina-mascotas .titulo-seccion {
+    margin-bottom: 1rem;
 }
 
-.navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+.tarjeta-mascotas {
+    background-color: var(--blanco);
+    color: var(--texto-oscuro);
+    border-radius: 14px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-h1 {
-    color: #198754;
+.tarjeta-mascotas h2 {
+    color: var(--azul-crepusculo);
+}
+
+.tarjeta-mascotas .form-label {
     font-weight: 600;
 }
 
-.card {
-    border: none;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+.pagina-mascotas .btn-primary {
+    background-color: var(--azul-crepusculo);
+    border-color: var(--azul-crepusculo);
 }
 
-.card-header {
-    font-weight: 600;
-}
-
-.form-label {
-    font-weight: 500;
-}
-
-.form-control:focus {
-    border-color: #198754;
-    box-shadow: 0 0 0 0.2rem rgba(25, 135, 84, 0.25);
+.pagina-mascotas .btn-primary:hover {
+    background-color: #1a2e47;
+    border-color: #1a2e47;
 }
 
 #totalMascotas {
+    color: var(--azul-crepusculo);
     font-weight: bold;
-    color: #198754;
 }
 
-.table {
-    background-color: white;
+.tabla-mascotas {
+    margin-bottom: 0;
 }
 
-.table th {
+.tabla-mascotas thead th {
+    background-color: var(--azul-crepusculo);
+    color: var(--blanco);
     text-align: center;
     vertical-align: middle;
+    white-space: nowrap;
 }
 
-.table td {
+.tabla-mascotas td {
     vertical-align: middle;
 }
 
-.btn-warning {
-    margin-right: 5px;
+body.modo-oscuro .tarjeta-mascotas {
+    background-color: #263442;
+    color: var(--texto-oscuro);
 }
 
-.btn-sm {
-    min-width: 80px;
+body.modo-oscuro .tarjeta-mascotas h2,
+body.modo-oscuro #totalMascotas {
+    color: #ffffff;
 }
 
-.table-responsive {
-    background-color: white;
-    border-radius: 6px;
-    overflow: hidden;
+body.modo-oscuro .pagina-mascotas .form-control {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
+    border-color: #78909c;
 }
 
-tbody tr:hover {
-    background-color: rgba(25, 135, 84, 0.05);
+body.modo-oscuro .pagina-mascotas .form-control:focus {
+    background-color: #18212b;
+    color: var(--texto-oscuro);
 }
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.8rem;
+body.modo-oscuro .tabla-mascotas {
+    --bs-table-color: #f1f4f6;
+    --bs-table-bg: transparent;
+    --bs-table-hover-color: #ffffff;
+    --bs-table-hover-bg: rgba(255, 255, 255, 0.08);
+    --bs-table-border-color: #536675;
+}
+
+@media (max-width: 576px) {
+    .tarjeta-mascotas {
+        padding: 1.25rem;
     }
 
-    .btn-sm {
+    .tabla-mascotas .btn {
         width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .btn-warning {
-        margin-right: 0;
-    }
-
-    td:last-child {
-        min-width: 120px;
+        margin-bottom: 0.35rem;
     }
 }
