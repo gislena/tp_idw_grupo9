@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia clínica | Veterinaria Patas Arriba</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../estilos/estilos.css">
+</head>
+
+<body class="pagina-historia-clinica">
+    <header class="encabezado">
+        <nav class="navbar navbar-expand-lg navegacion" aria-label="Navegación principal">
+            <div class="contenedor-navegacion">
+                <a class="logo-contenedor" href="../index.html">
+                    <img src="../assets/images/Logo.png" alt="Logo Veterinaria Patas Arriba" class="logo">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#menuPrincipal" aria-controls="menuPrincipal"
+                    aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item"><a href="../index.html" class="nav-link">Inicio</a></li>
+                        <li class="nav-item"><a href="institucional.html" class="nav-link">Información institucional</a></li>
+                        <li class="nav-item"><a href="../index.html#servicios" class="nav-link">Servicios</a></li>
+                        <li class="nav-item"><a href="turnos.html" class="nav-link">Turnos</a></li>
+                        <li class="nav-item"><a href="historia-clinica.html" class="nav-link activo">Historia clínica</a></li>
+                        <li class="nav-item"><a href="contactos.html" class="nav-link">Contacto</a></li>
+                        <li class="nav-item">
+                            <button id="botonTema" class="nav-link boton-tema" type="button" aria-pressed="false">
+                                🌙 Modo oscuro
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container py-5">
+        <section class="text-center mb-5">
+            <h1 class="titulo-seccion">Historia clínica</h1>
+            <p class="lead">Registrá y consultá la información médica de cada mascota.</p>
+        </section>
+
+        <section class="tarjeta-historia mb-5">
+            <h2 class="h3 mb-4">Nuevo registro clínico</h2>
+
+            <div id="mensajeHistoria" aria-live="polite"></div>
+
+            <form id="formularioHistoria" class="row g-3" novalidate>
+                <input type="hidden" id="idHistoria">
+
+                <div class="col-12 col-md-6">
+                    <label for="mascota" class="form-label">Nombre de la mascota</label>
+                    <input type="text" id="mascota" class="form-control" required maxlength="50">
+                    <div class="invalid-feedback">Ingresá el nombre de la mascota.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="responsable" class="form-label">Nombre del responsable</label>
+                    <input type="text" id="responsable" class="form-control" required maxlength="70">
+                    <div class="invalid-feedback">Ingresá el nombre del responsable.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="fecha" class="form-label">Fecha de la consulta</label>
+                    <input type="date" id="fecha" class="form-control" required>
+                    <div class="invalid-feedback">Elegí la fecha de la consulta.</div>
+                </div>
+
+                <div class="col-12 col-md-6">
+                    <label for="veterinario" class="form-label">Veterinario/a responsable</label>
+                    <input type="text" id="veterinario" class="form-control" required maxlength="70">
+                    <div class="invalid-feedback">Ingresá el nombre del veterinario/a.</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="diagnostico" class="form-label">Diagnóstico</label>
+                    <textarea id="diagnostico" class="form-control" rows="3" required maxlength="300"></textarea>
+                    <div class="invalid-feedback">Ingresá el diagnóstico.</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="tratamiento" class="form-label">Tratamiento indicado</label>
+                    <textarea id="tratamiento" class="form-control" rows="3" required maxlength="300"></textarea>
+                    <div class="invalid-feedback">Ingresá el tratamiento indicado.</div>
+                </div>
+
+                <div class="col-12">
+                    <label for="observaciones" class="form-label">Observaciones</label>
+                    <textarea id="observaciones" class="form-control" rows="3" maxlength="300"></textarea>
+                </div>
+
+                <div class="col-12 d-flex gap-2 flex-wrap">
+                    <button id="botonGuardar" type="submit" class="btn btn-primary">
+                        Guardar registro
+                    </button>
+
+                    <button id="botonCancelar" type="button" class="btn btn-outline-secondary d-none">
+                        Cancelar edición
+                    </button>
+                </div>
+            </form>
+        </section>
+
+        <section class="tarjeta-historia">
+            <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+                <h2 class="h3 mb-0">Registros clínicos</h2>
+                <p class="mb-0"><strong>Total:</strong> <span id="totalHistorias">0</span></p>
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-hover align-middle tabla-historia">
+                    <thead>
+                        <tr>
+                            <th>Mascota</th>
+                            <th>Responsable</th>
+                            <th>Fecha</th>
+                            <th>Veterinario/a</th>
+                            <th>Diagnóstico</th>
+                            <th>Tratamiento</th>
+                            <th>Observaciones</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaHistorias"></tbody>
+                </table>
+            </div>
+
+            <p id="sinHistorias" class="text-center mb-0">
+                Todavía no hay registros clínicos.
+            </p>
+        </section>
+    </main>
+
+    <footer class="pie-pagina">
+        <p>&copy; 2026 Veterinaria Patas Arriba</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/tema.js"></script>
+    <script src="../scripts/historia-clinica.js"></script>
+</body>
+</html>
