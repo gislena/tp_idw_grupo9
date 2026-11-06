@@ -10,6 +10,48 @@ const totalTurnos = document.querySelector("#totalTurnos");
 const botonGuardar = document.querySelector("#botonGuardar");
 const botonCancelar = document.querySelector("#botonCancelar");
 const fechaInput = document.querySelector("#fecha");
+const mascotaInput = document.querySelector("#mascota");
+const veterinarioInput = document.querySelector("#veterinario");
+
+function obtenerDatos(clave) {
+    try {
+        const datos = JSON.parse(localStorage.getItem(clave));
+        return Array.isArray(datos) ? datos : [];
+    } catch {
+        return [];
+    }
+}
+
+function cargarOpciones(select, datos, obtenerNombre, textoVacio) {
+    select.replaceChildren();
+
+    const opcionInicial = document.createElement("option");
+    opcionInicial.value = "";
+    opcionInicial.textContent = datos.length ? textoVacio : `No hay ${textoVacio.toLowerCase()}`;
+    select.append(opcionInicial);
+
+    datos.forEach((dato) => {
+        const opcion = document.createElement("option");
+        opcion.value = obtenerNombre(dato);
+        opcion.textContent = obtenerNombre(dato);
+        select.append(opcion);
+    });
+}
+
+function cargarMascotasYVeterinarios() {
+    cargarOpciones(
+        mascotaInput,
+        obtenerDatos("mascotas"),
+        (mascota) => mascota.nombreMascota,
+        "Seleccioná una mascota"
+    );
+    cargarOpciones(
+        veterinarioInput,
+        obtenerDatos("veterinarios"),
+        (veterinario) => veterinario.nombre,
+        "Seleccioná un veterinario"
+    );
+}
 
 function obtenerTurnos() {
     try {
@@ -70,6 +112,7 @@ function renderizarTurnos() {
         const fila = document.createElement("tr");
 
         agregarCelda(fila, turno.mascota);
+        agregarCelda(fila, turno.veterinario || "-");
         agregarCelda(fila, turno.responsable);
         agregarCelda(fila, turno.telefono);
         agregarCelda(fila, formatearFecha(turno.fecha, turno.hora));
@@ -112,7 +155,8 @@ function editarTurno(id) {
     if (!turno) return;
 
     document.querySelector("#idTurno").value = turno.id;
-    document.querySelector("#mascota").value = turno.mascota;
+    mascotaInput.value = turno.mascota;
+    veterinarioInput.value = turno.veterinario || "";
     document.querySelector("#responsable").value = turno.responsable;
     document.querySelector("#telefono").value = turno.telefono;
     document.querySelector("#fecha").value = turno.fecha;
@@ -146,7 +190,8 @@ formulario.addEventListener("submit", (evento) => {
 
     const turno = {
         id: document.querySelector("#idTurno").value || crearId(),
-        mascota: document.querySelector("#mascota").value.trim(),
+        mascota: mascotaInput.value,
+        veterinario: veterinarioInput.value,
         responsable: document.querySelector("#responsable").value.trim(),
         telefono: document.querySelector("#telefono").value.trim(),
         fecha: fechaInput.value,
@@ -192,4 +237,5 @@ botonCancelar.addEventListener("click", limpiarFormulario);
 
 fechaInput.min = new Date().toLocaleDateString("en-CA");
 
+cargarMascotasYVeterinarios();
 renderizarTurnos();
