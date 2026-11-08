@@ -918,3 +918,6 @@ body.modo-oscuro .pagina-historia-clinica .tabla-historia {
         padding: 1.25rem;
     }
 }
+.tarjeta-login {
+    max-width: 460px;
+}
