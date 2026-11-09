@@ -1,4 +1,3 @@
-
 const URL_API_LOGIN = 'https://dummyjson.com/auth/login';
 
 const formularioLogin = document.querySelector('#formularioLogin');
@@ -6,6 +5,7 @@ const campoUsuario = document.querySelector('#usuario');
 const campoClave = document.querySelector('#clave');
 const mensajeLogin = document.querySelector('#mensajeLogin');
 const botonIngresar = document.querySelector('#botonIngresar');
+
 function obtenerDestino() {
     const volver = new URLSearchParams(location.search).get('volver');
     const esRutaRelativa = volver && !/^(?:[a-z]+:)?\/\//i.test(volver) && !volver.startsWith('/');
@@ -20,6 +20,7 @@ function mostrarError(texto) {
     alerta.textContent = texto;
     mensajeLogin.appendChild(alerta);
 }
+
 if (Sesion.haySesion()) {
     location.replace(obtenerDestino());
 }
@@ -68,3 +69,4 @@ formularioLogin.addEventListener('submit', async (evento) => {
         botonIngresar.disabled = false;
         botonIngresar.textContent = 'Ingresar';
     }
+});
