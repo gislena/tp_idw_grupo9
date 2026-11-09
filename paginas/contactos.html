@@ -35,34 +35,30 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="menuPrincipal">
-                    <ul class="navbar-nav ms-auto mb-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html">Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="institucional.html">Información Institucional</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="../index.html#servicios">Servicios</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="turnos.html" href="nav-link">Turnos</a>
-                        </li>
-                        <li class="nav-item">
-                           <a class="historia-clinica.html" href="nav-link">Historia clínica</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" href="contactos.html" aria-current="page">Contacto</a>
-                        </li>
-                        <li class="nav-item">
-                            <button id="botonTema"
-                                    class="nav-link boton-tema"
-                                    type="button"
-                                    aria-pressed="false">
-                                🌙 Modo oscuro
-                            </button>
-                        </li>
-                    </ul>
+                   <ul class="navbar-nav ms-auto mb-0">
+    <li class="nav-item"><a class="nav-link" href__="../index.html">Inicio</a></li>
+    <li class="nav-item"><a class="nav-link" href__="institucional.html">Información Institucional</a></li>
+    <li class="nav-item"><a class="nav-link" href__="../index.html#servicios">Servicios</a></li>
+
+    <li class="nav-item" data-admin hidden><a class="nav-link" href__="turnos.html">Turnos</a></li>
+    <li class="nav-item" data-admin hidden><a class="nav-link" href__="historia-clinica.html">Historia clínica</a></li>
+
+    <li class="nav-item"><a class="nav-link active" href__="contactos.html" aria-current="page">Contacto</a></li>
+
+    <li class="nav-item" data-admin hidden>
+        <span class="nav-link">👤 <span data-nombre-usuario></span></span>
+    </li>
+    <li class="nav-item" data-admin hidden>
+        <button type="button" class="nav-link boton-tema" data-cerrar-sesion>Cerrar sesión</button>
+    </li>
+    <li class="nav-item" data-invitado>
+        <a href__="login.html" class="nav-link">Iniciar sesión</a>
+    </li>
+
+    <li class="nav-item">
+        <button id="botonTema" class="nav-link boton-tema" type="button" aria-pressed="false">🌙 Modo oscuro</button>
+    </li>
+</ul>
                 </div>
 
             </div>
