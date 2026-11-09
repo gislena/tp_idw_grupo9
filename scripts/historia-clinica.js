@@ -37,7 +37,7 @@ function guardarHistorias(historias) {
 
 function crearId() {
     return window.crypto?.randomUUID?.() ||
-        `\({Date.now()}-\){Math.random().toString(16).slice(2)}`;
+        `${Date.now()}-${Math.random().toString(16).slice(2)}`;
 }
 
 function mostrarMensaje(texto, tipo) {
@@ -88,10 +88,9 @@ function cargarSelectMascotas() {
 
     mascotas.forEach((mascota, indice) => {
         const id = String(mascota.idMascota ?? `sin-id-${indice}`);
-        const etiqueta = `\({nombreMascota(mascota)}\){
+          const etiqueta = `${nombreMascota(mascota)}${
             mascota.nombreDuenio ? ` — ${mascota.nombreDuenio}` : ""
         }`;
-
         for (const select of [mascotaInput, filtroMascota]) {
             const opcion = document.createElement("option");
             opcion.value = id;
@@ -122,7 +121,7 @@ function cargarSelectMascotas() {
 function formatearFecha(fecha) {
     if (!fecha) return "-";
     const [anio, mes, dia] = fecha.split("-");
-    return `\({dia}/\){mes}/${anio}`;
+    return `${dia}/${mes}/${anio}`;
 }
 
 function agregarCelda(fila, texto) {
