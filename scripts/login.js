@@ -9,7 +9,11 @@ const botonIngresar = document.querySelector('#botonIngresar');
 function obtenerDestino() {
     const volver = new URLSearchParams(location.search).get('volver');
     const esRutaRelativa = volver && !/^(?:[a-z]+:)?\/\//i.test(volver) && !volver.startsWith('/');
-    return esRutaRelativa ? volver : '../index.html';
+
+    if (!esRutaRelativa) return '../index.html';
+
+    const raiz = new URL('../', Sesion.urlLogin);
+    return new URL(volver, raiz).href;
 }
 
 function mostrarError(texto) {
