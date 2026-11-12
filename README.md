@@ -6,7 +6,6 @@ Trabajo Final Integrador - Introducción al Desarrollo Web
 
 - Maria Agustina Belsun
 - Belen Fehr
-- Gislena Gil Lopez
 - Abigail Vergara
 
 ## Descripción
@@ -28,6 +27,8 @@ Para ejecutar el proyecto:
 bash
 npx vite
 
+Enlace del video 
+https://youtu.be/ZSdjnSRZ13U
 
 Luego abrir:
 
